@@ -138,3 +138,18 @@ for _, v in ipairs(test_case) do
     assert(murmurhash3.hash128(v[2], v[1]) == v[4])
     assert(murmurhash3.hash128_x64(v[2], v[1]) == v[5])
 end
+
+
+local bytes_endian = {
+    { "Hello", { 0x2360ae46, 0x5e6336c6, 0xad45b3f4, 0xad45b3f4 }, },
+    { "Hello1", { 0x8eb0cf41, 0x641b2401, 0xbc4c0dfc, 0xbc4c0dfc }, },
+    { "Hello2", { 0xd3bcfc45, 0x66782162, 0x4beab2d1, 0x4beab2d1 }, },
+    { "2", { 0x9dd4f4e7, 0x3df769b3, 0x3df769b3, 0x3df769b3 }, },
+    { "88", { 0x28979fa9, 0x0b1b1a58, 0x0b1b1a58, 0x0b1b1a58 }, },
+}
+
+for _, v in pairs(bytes_endian) do
+    local a, b, c, d = string.unpack("<I4<I4<I4<I4", murmurhash3.hash128(v[1], nil, true))
+    assert(a == v[2][1] and b == v[2][2] and c == v[2][3] and d == v[2][4])
+end
+
