@@ -139,7 +139,7 @@ for _, v in ipairs(test_case) do
     assert(murmurhash3.hash128_x64(v[2], v[1]) == v[5])
 end
 
-
+-- example from: https://github.com/hideo55/node-murmurhash3/blob/ec79ef48ce87f8bb775775e8ffbb3ef1bd643309/test/test.js#L2
 local bytes_endian = {
     { "Hello", { 0x2360ae46, 0x5e6336c6, 0xad45b3f4, 0xad45b3f4 }, },
     { "Hello1", { 0x8eb0cf41, 0x641b2401, 0xbc4c0dfc, 0xbc4c0dfc }, },
