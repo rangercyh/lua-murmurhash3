@@ -1,6 +1,6 @@
 # lua-murmurhash3
 
-lua warpper for [murmurhash3](https://github.com/aappleby/smhasher/wiki/MurmurHash3)
+lua wrapper for [murmurhash3](https://github.com/aappleby/smhasher/wiki/MurmurHash3)
 
 murmurhash3 code is according to [smhasher murmurhash3](https://github.com/rurban/smhasher/blob/master/MurmurHash3.cpp) 
 
