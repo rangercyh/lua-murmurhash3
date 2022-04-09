@@ -33,6 +33,6 @@ I use unsigned char to pass from c to lua and convert the binary to bytes hexade
 
 So the sequence of the bytes is different from other lib like [go native murmur3](https://github.com/spaolacci/murmur3/blob/master/murmur_test.go#L17) when they use the binary bits convert to internal integer type.
 
-The original bytes string can be convert to integer in either endian you choose, I put a example in the test case.
+The original bytes string can be convert to integer in either endian you choose, I put a example in the [test case](test.lua#L142).
 
 If you want to do some compatible work with the other implementation, you can get the raw bytes string and change the representation yourself refer to my test example.
